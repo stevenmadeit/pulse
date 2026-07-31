@@ -1,0 +1,103 @@
+version: 2
+
+sources:
+  - name: pulse
+    tables:
+      - name: raw_weather
+      - name: raw_sports
+      - name: raw_crypto
+
+models:
+  - name: stg_weather
+    description: "Staging weather payloads into clean weather columns."
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: city
+        tests:
+          - not_null
+      - name: temperature
+        tests:
+          - not_null
+      - name: condition
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - clear
+                - mainly_clear
+                - partly_cloudy
+                - overcast
+                - fog
+                - depositing_rime_fog
+                - drizzle_light
+                - drizzle_moderate
+                - drizzle_dense
+                - freezing_drizzle_light
+                - freezing_drizzle_dense
+                - rain_slight
+                - rain_moderate
+                - rain_heavy
+                - freezing_rain_light
+                - freezing_rain_heavy
+                - snow_fall_slight
+                - snow_fall_moderate
+                - snow_fall_heavy
+                - snow_grains
+                - rain_showers_slight
+                - rain_showers_moderate
+                - rain_showers_violent
+                - snow_showers_slight
+                - snow_showers_heavy
+                - thunderstorm_slight_or_moderate
+                - thunderstorm_hail_slight
+                - thunderstorm_hail_heavy
+                - unknown
+  - name: stg_sports
+    description: "Staging sports payloads into structured game results."
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: home_team
+        tests:
+          - not_null
+      - name: away_team
+        tests:
+          - not_null
+      - name: home_score
+        tests:
+          - not_null
+      - name: away_score
+        tests:
+          - not_null
+      - name: game_date
+        tests:
+          - not_null
+  - name: stg_crypto
+    description: "Staging crypto payloads into coin prices."
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: coin
+        tests:
+          - not_null
+      - name: price_usd
+        tests:
+          - not_null
+  - name: daily_summary
+    description: "Mart combining latest weather, sports, and top crypto prices."
+    columns:
+      - name: weather_city
+        tests:
+          - not_null
+      - name: sports_game_date
+        tests:
+          - not_null
+      - name: crypto_coin
+        tests:
+          - not_null

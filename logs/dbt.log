@@ -1,0 +1,69 @@
+[0m15:57:35.826770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EAD74C7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EAF110C20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EAC62C680>]}
+
+
+============================== 15:57:35.843289 | a46ecf94-68b8-4fc1-baca-9a505e906df6 ==============================
+[0m15:57:35.843289 [info ] [MainThread]: Running with dbt=1.12.0
+[0m15:57:35.844289 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform\\logs'}
+[0m15:57:35.861821 [info ] [MainThread]: dbt version: 1.12.0
+[0m15:57:35.862323 [info ] [MainThread]: python version: 3.12.13
+[0m15:57:35.862323 [info ] [MainThread]: python path: C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Scripts\python.exe
+[0m15:57:35.862822 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m15:57:35.904379 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+DLL load failed while importing _sqlite3: The specified module could not be found.
+[0m15:57:35.906879 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\cli\requires.py", line 190, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\cli\requires.py", line 136, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\cli\main.py", line 439, in debug
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\task\debug.py", line 114, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+                                         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\task\debug.py", line 205, in _load_profile
+    profile: Profile = Profile.render(
+                       ^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\config\profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\config\profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\config\profile.py", line 326, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\config\profile.py", line 150, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\adapters\factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\QGIS 3.44.11\apps\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\adapters\sqlite\__init__.py", line 1, in <module>
+    from dbt.adapters.sqlite.connections import SQLiteConnectionManager
+  File "C:\Users\Steve\OneDrive\Desktop\code\pulse\dbt_venv\Lib\site-packages\dbt\adapters\sqlite\connections.py", line 6, in <module>
+    import sqlite3
+  File "C:\Program Files\QGIS 3.44.11\apps\Python312\Lib\sqlite3\__init__.py", line 57, in <module>
+    from sqlite3.dbapi2 import *
+  File "C:\Program Files\QGIS 3.44.11\apps\Python312\Lib\sqlite3\dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ImportError: DLL load failed while importing _sqlite3: The specified module could not be found.
+
+[0m15:57:35.907891 [debug] [MainThread]: Command `dbt debug` failed at 15:57:35.907891 after 0.20 seconds
+[0m15:57:35.907891 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EAD6D6120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EAF110C20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EAF110B90>]}
+[0m15:57:35.908389 [debug] [MainThread]: Flushing usage events
+[0m15:57:36.555582 [debug] [MainThread]: An error was encountered while trying to flush usage events

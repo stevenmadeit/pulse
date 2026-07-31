@@ -1,0 +1,8 @@
+pulse_transform_profile:
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+      database: ../pulse.db
+      threads: 1
+      timeout: 30
