@@ -5,7 +5,7 @@ with source as (
         raw_json,
         ingested_at,
         raw_json::jsonb -> 'events' as events_json
-    from {{ source('pulse', 'raw_sports') }}
+    from "pulse"."public"."raw_sports"
 ),
 parsed as (
     select

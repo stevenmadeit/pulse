@@ -1,11 +1,21 @@
-with source as (
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_sports__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
     select
         id,
         source,
         raw_json,
         ingested_at,
         raw_json::jsonb -> 'events' as events_json
-    from {{ source('pulse', 'raw_sports') }}
+    from "pulse"."public"."raw_sports"
 ),
 parsed as (
     select
@@ -31,3 +41,5 @@ select
     ingested_at,
     raw_json
 from parsed
+  );
+  

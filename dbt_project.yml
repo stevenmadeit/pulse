@@ -13,3 +13,4 @@ clean-targets: ["target", "dbt_modules"]
 models:
   pulse_transform:
     +materialized: table
+    +schema: public

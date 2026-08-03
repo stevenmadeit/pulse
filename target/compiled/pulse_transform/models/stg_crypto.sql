@@ -5,7 +5,7 @@ with source as (
         raw_json,
         ingested_at,
         raw_json::jsonb as payload
-    from {{ source('pulse', 'raw_crypto') }}
+    from "pulse"."public"."raw_crypto"
 ),
 flattened as (
     select

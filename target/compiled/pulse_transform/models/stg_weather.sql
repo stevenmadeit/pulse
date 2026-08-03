@@ -9,7 +9,7 @@ with source as (
         raw_json::jsonb ->> 'requested_longitude' as longitude,
         ingested_at,
         raw_json
-    from {{ source('pulse', 'raw_weather') }}
+    from "pulse"."public"."raw_weather"
 )
 
 select

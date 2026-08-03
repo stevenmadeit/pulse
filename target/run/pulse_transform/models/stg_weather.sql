@@ -1,4 +1,14 @@
-with source as (
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_weather__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
     select
         id,
         source,
@@ -9,7 +19,7 @@ with source as (
         raw_json::jsonb ->> 'requested_longitude' as longitude,
         ingested_at,
         raw_json
-    from {{ source('pulse', 'raw_weather') }}
+    from "pulse"."public"."raw_weather"
 )
 
 select
@@ -51,3 +61,5 @@ select
     ingested_at,
     raw_json
 from source
+  );
+  

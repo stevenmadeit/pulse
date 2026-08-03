@@ -1,11 +1,21 @@
-with source as (
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_crypto__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
     select
         id,
         source,
         raw_json,
         ingested_at,
         raw_json::jsonb as payload
-    from {{ source('pulse', 'raw_crypto') }}
+    from "pulse"."public"."raw_crypto"
 ),
 flattened as (
     select
@@ -26,3 +36,5 @@ select
     ingested_at,
     raw_json
 from flattened
+  );
+  
