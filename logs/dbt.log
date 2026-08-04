@@ -7350,3 +7350,2437 @@ parsing.
 [0m22:15:07.397314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8382EC8F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8361037D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A83B85A090>]}
 [0m22:15:07.397314 [debug] [MainThread]: Flushing usage events
 [0m22:15:07.888432 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:43:23.127431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024970F4D5B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002496C4B32C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002496F4D5580>]}
+
+
+============================== 19:43:23.145822 | b049e82d-b5d3-4b16-a5b2-49e7683fa711 ==============================
+[0m19:43:23.145822 [info ] [MainThread]: Running with dbt=1.12.0
+[0m19:43:23.146823 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt build --profiles-dir C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform --project-dir C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform\\logs'}
+[0m19:43:23.465238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002497195E840>]}
+[0m19:43:23.527686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002496F493D40>]}
+[0m19:43:23.529186 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:43:24.013813 [debug] [MainThread]: checksum: c88f2b38114df2604ccc177aea92f212ddffa831408be655762d132e6474640b, vars: {}, profile: pulse_transform_profile, target: dev, version: 1.12.0
+[0m19:43:25.640910 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:43:25.641414 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:43:25.641915 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:43:25.653961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024971BECF20>]}
+[0m19:43:25.845462 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\manifest.json
+[0m19:43:25.848961 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\semantic_manifest.json
+[0m19:43:25.896471 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\osi_document.json
+[0m19:43:25.975602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024971F274A0>]}
+[0m19:43:25.976604 [info ] [MainThread]: Found 4 models, 18 data tests, 3 sources, 477 macros
+[0m19:43:25.983974 [info ] [MainThread]: 
+[0m19:43:25.985474 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:43:25.989980 [info ] [MainThread]: 
+[0m19:43:25.991494 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:43:26.005034 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pulse'
+[0m19:43:29.285272 [debug] [ThreadPool]: Using postgres connection "list_pulse"
+[0m19:43:29.285772 [debug] [ThreadPool]: On list_pulse: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "connection_name": "list_pulse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:43:29.285772 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:43:29.340896 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.055 seconds
+[0m19:43:29.342352 [debug] [ThreadPool]: On list_pulse: Close
+[0m19:43:29.344360 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pulse_public_public'
+[0m19:43:29.348876 [debug] [ThreadPool]: Using postgres connection "list_pulse_public_public"
+[0m19:43:29.348876 [debug] [ThreadPool]: On list_pulse_public_public: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "connection_name": "list_pulse_public_public"} */
+select
+      'pulse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'pulse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'pulse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_public'
+    union all
+    select distinct
+     'pulse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_public'
+  
+[0m19:43:29.349376 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:43:29.398309 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.049 seconds
+[0m19:43:29.399310 [debug] [ThreadPool]: On list_pulse_public_public: ROLLBACK
+[0m19:43:29.400315 [debug] [ThreadPool]: On list_pulse_public_public: Close
+[0m19:43:29.405326 [debug] [MainThread]: Using postgres connection "master"
+[0m19:43:29.405826 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:43:29.405826 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:43:29.455444 [debug] [MainThread]: SQL status: SELECT 0 in 0.049 seconds
+[0m19:43:29.456449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002497228BF50>]}
+[0m19:43:29.456948 [debug] [MainThread]: On master: ROLLBACK
+[0m19:43:29.457449 [debug] [MainThread]: On master: COMMIT
+[0m19:43:29.457449 [debug] [MainThread]: Using postgres connection "master"
+[0m19:43:29.457949 [debug] [MainThread]: On master: COMMIT
+[0m19:43:29.458449 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:43:29.458449 [debug] [MainThread]: On master: Close
+[0m19:43:29.483467 [debug] [Thread-1 (]: Began running node model.pulse_transform.stg_crypto
+[0m19:43:29.483968 [info ] [Thread-1 (]: 1 of 22 START sql table model public_public.stg_crypto ......................... [RUN]
+[0m19:43:29.484968 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.pulse_transform.stg_crypto'
+[0m19:43:29.485466 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.stg_crypto
+[0m19:43:29.489974 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.stg_crypto"
+[0m19:43:29.490980 [debug] [Thread-1 (]: Began executing node model.pulse_transform.stg_crypto
+[0m19:43:29.520049 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.stg_crypto"
+[0m19:43:29.521054 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:43:29.521554 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_crypto__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        raw_json::jsonb as payload
+    from "pulse"."public"."raw_crypto"
+),
+flattened as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        key as coin,
+        nullif(value ->> 'usd', '') as price_usd
+    from source,
+    jsonb_each(payload)
+)
+select
+    row_number() over (order by id, coin) as id,
+    source,
+    coin,
+    cast(price_usd as float) as price_usd,
+    ingested_at,
+    raw_json
+from flattened
+  );
+  
+[0m19:43:29.522054 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:43:29.624786 [debug] [Thread-1 (]: SQL status: SELECT 22 in 0.103 seconds
+[0m19:43:29.631800 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:43:29.632300 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+alter table "pulse"."public_public"."stg_crypto" rename to "stg_crypto__dbt_backup"
+[0m19:43:29.633300 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:29.636301 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:43:29.636803 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+alter table "pulse"."public_public"."stg_crypto__dbt_tmp" rename to "stg_crypto"
+[0m19:43:29.637301 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:29.652359 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: COMMIT
+[0m19:43:29.652860 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:43:29.653359 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: COMMIT
+[0m19:43:29.654859 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:43:29.659359 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."stg_crypto__dbt_backup"
+[0m19:43:29.663368 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:43:29.664373 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+drop table if exists "pulse"."public_public"."stg_crypto__dbt_backup" cascade
+[0m19:43:29.672889 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.008 seconds
+[0m19:43:29.675889 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: Close
+[0m19:43:29.678887 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002496CE30140>]}
+[0m19:43:29.679387 [info ] [Thread-1 (]: 1 of 22 OK created sql table model public_public.stg_crypto .................... [[32mSELECT 22[0m in 0.19s]
+[0m19:43:29.680391 [debug] [Thread-1 (]: Finished running node model.pulse_transform.stg_crypto
+[0m19:43:29.680896 [debug] [Thread-1 (]: Began running node model.pulse_transform.stg_sports
+[0m19:43:29.681396 [info ] [Thread-1 (]: 2 of 22 START sql table model public_public.stg_sports ......................... [RUN]
+[0m19:43:29.683402 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.stg_crypto, now model.pulse_transform.stg_sports)
+[0m19:43:29.683402 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.stg_sports
+[0m19:43:29.685911 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.stg_sports"
+[0m19:43:29.686912 [debug] [Thread-1 (]: Began executing node model.pulse_transform.stg_sports
+[0m19:43:29.689411 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.stg_sports"
+[0m19:43:29.690416 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:43:29.690922 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_sports__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        raw_json::jsonb -> 'events' as events_json
+    from "pulse"."public"."raw_sports"
+),
+parsed as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        events_json -> 0 ->> 'date' as game_date,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 0 -> 'team' ->> 'abbreviation' as home_team,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 0 ->> 'score' as home_score,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 1 -> 'team' ->> 'abbreviation' as away_team,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 1 ->> 'score' as away_score
+    from source
+)
+select
+    id,
+    source,
+    trim(home_team) as home_team,
+    trim(away_team) as away_team,
+    cast(home_score as integer) as home_score,
+    cast(away_score as integer) as away_score,
+    game_date,
+    ingested_at,
+    raw_json
+from parsed
+  );
+  
+[0m19:43:29.690922 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:29.737523 [debug] [Thread-1 (]: SQL status: SELECT 2 in 0.046 seconds
+[0m19:43:29.740532 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:43:29.740532 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+alter table "pulse"."public_public"."stg_sports" rename to "stg_sports__dbt_backup"
+[0m19:43:29.741532 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:29.743533 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:43:29.743533 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+alter table "pulse"."public_public"."stg_sports__dbt_tmp" rename to "stg_sports"
+[0m19:43:29.744032 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:29.745533 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: COMMIT
+[0m19:43:29.746031 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:43:29.746532 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: COMMIT
+[0m19:43:29.747031 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:43:29.749039 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."stg_sports__dbt_backup"
+[0m19:43:29.749039 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:43:29.750043 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+drop table if exists "pulse"."public_public"."stg_sports__dbt_backup" cascade
+[0m19:43:29.753547 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m19:43:29.755557 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: Close
+[0m19:43:29.756062 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000249723B7470>]}
+[0m19:43:29.756561 [info ] [Thread-1 (]: 2 of 22 OK created sql table model public_public.stg_sports .................... [[32mSELECT 2[0m in 0.07s]
+[0m19:43:29.757061 [debug] [Thread-1 (]: Finished running node model.pulse_transform.stg_sports
+[0m19:43:29.757061 [debug] [Thread-1 (]: Began running node model.pulse_transform.stg_weather
+[0m19:43:29.757561 [info ] [Thread-1 (]: 3 of 22 START sql table model public_public.stg_weather ........................ [RUN]
+[0m19:43:29.758561 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.stg_sports, now model.pulse_transform.stg_weather)
+[0m19:43:29.759061 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.stg_weather
+[0m19:43:29.761072 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.stg_weather"
+[0m19:43:29.762075 [debug] [Thread-1 (]: Began executing node model.pulse_transform.stg_weather
+[0m19:43:29.765574 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.stg_weather"
+[0m19:43:29.766574 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:43:29.767074 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_weather__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
+    select
+        id,
+        source,
+        raw_json::jsonb ->> 'requested_city' as city,
+        raw_json::jsonb -> 'current_weather' ->> 'temperature' as temperature,
+        raw_json::jsonb -> 'current_weather' ->> 'weathercode' as weather_code,
+        raw_json::jsonb ->> 'requested_latitude' as latitude,
+        raw_json::jsonb ->> 'requested_longitude' as longitude,
+        ingested_at,
+        raw_json
+    from "pulse"."public"."raw_weather"
+)
+
+select
+    id,
+    source,
+    city,
+    cast(temperature as float) as temperature,
+    case cast(weather_code as integer)
+        when 0 then 'clear'
+        when 1 then 'mainly_clear'
+        when 2 then 'partly_cloudy'
+        when 3 then 'overcast'
+        when 45 then 'fog'
+        when 48 then 'depositing_rime_fog'
+        when 51 then 'drizzle_light'
+        when 53 then 'drizzle_moderate'
+        when 55 then 'drizzle_dense'
+        when 56 then 'freezing_drizzle_light'
+        when 57 then 'freezing_drizzle_dense'
+        when 61 then 'rain_slight'
+        when 63 then 'rain_moderate'
+        when 65 then 'rain_heavy'
+        when 66 then 'freezing_rain_light'
+        when 67 then 'freezing_rain_heavy'
+        when 71 then 'snow_fall_slight'
+        when 73 then 'snow_fall_moderate'
+        when 75 then 'snow_fall_heavy'
+        when 77 then 'snow_grains'
+        when 80 then 'rain_showers_slight'
+        when 81 then 'rain_showers_moderate'
+        when 82 then 'rain_showers_violent'
+        when 85 then 'snow_showers_slight'
+        when 86 then 'snow_showers_heavy'
+        when 95 then 'thunderstorm_slight_or_moderate'
+        when 96 then 'thunderstorm_hail_slight'
+        when 99 then 'thunderstorm_hail_heavy'
+        else 'unknown'
+    end as condition,
+    ingested_at,
+    raw_json
+from source
+  );
+  
+[0m19:43:29.767074 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:29.810544 [debug] [Thread-1 (]: SQL status: SELECT 20 in 0.043 seconds
+[0m19:43:29.813549 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:43:29.814055 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+alter table "pulse"."public_public"."stg_weather" rename to "stg_weather__dbt_backup"
+[0m19:43:29.814556 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:29.817065 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:43:29.817564 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+alter table "pulse"."public_public"."stg_weather__dbt_tmp" rename to "stg_weather"
+[0m19:43:29.818065 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:29.820068 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: COMMIT
+[0m19:43:29.820575 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:43:29.821074 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: COMMIT
+[0m19:43:29.822575 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:43:29.824075 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."stg_weather__dbt_backup"
+[0m19:43:29.824573 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:43:29.825075 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+drop table if exists "pulse"."public_public"."stg_weather__dbt_backup" cascade
+[0m19:43:29.829074 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m19:43:29.831083 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: Close
+[0m19:43:29.831585 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024971FBD460>]}
+[0m19:43:29.832091 [info ] [Thread-1 (]: 3 of 22 OK created sql table model public_public.stg_weather ................... [[32mSELECT 20[0m in 0.07s]
+[0m19:43:29.832590 [debug] [Thread-1 (]: Finished running node model.pulse_transform.stg_weather
+[0m19:43:29.833089 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:43:29.833589 [info ] [Thread-1 (]: 4 of 22 START test not_null_stg_crypto_coin .................................... [RUN]
+[0m19:43:29.834090 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.stg_weather, now test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe)
+[0m19:43:29.834090 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:43:29.847112 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"
+[0m19:43:29.848116 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:43:29.861659 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"
+[0m19:43:29.863161 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"
+[0m19:43:29.863161 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select coin
+from "pulse"."public_public"."stg_crypto"
+where coin is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:29.863660 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:29.903715 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.041 seconds
+[0m19:43:29.907726 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe: ROLLBACK
+[0m19:43:29.908225 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe: Close
+[0m19:43:29.908725 [info ] [Thread-1 (]: 4 of 22 PASS not_null_stg_crypto_coin .......................................... [[32mPASS[0m in 0.07s]
+[0m19:43:29.909225 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:43:29.909225 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:43:29.910228 [info ] [Thread-1 (]: 5 of 22 START test not_null_stg_crypto_id ...................................... [RUN]
+[0m19:43:29.910733 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe, now test.pulse_transform.not_null_stg_crypto_id.6ded0cac78)
+[0m19:43:29.910733 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:43:29.916233 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"
+[0m19:43:29.917233 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:43:29.918733 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"
+[0m19:43:29.919235 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"
+[0m19:43:29.920239 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_id.6ded0cac78: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "pulse"."public_public"."stg_crypto"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:29.920239 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:29.954709 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m19:43:29.956210 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_id.6ded0cac78: ROLLBACK
+[0m19:43:29.956710 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_id.6ded0cac78: Close
+[0m19:43:29.957210 [info ] [Thread-1 (]: 5 of 22 PASS not_null_stg_crypto_id ............................................ [[32mPASS[0m in 0.05s]
+[0m19:43:29.957710 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:43:29.957710 [debug] [Thread-1 (]: Began running node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:43:29.958212 [info ] [Thread-1 (]: 6 of 22 START test unique_stg_crypto_id ........................................ [RUN]
+[0m19:43:29.958712 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_crypto_id.6ded0cac78, now test.pulse_transform.unique_stg_crypto_id.a906923065)
+[0m19:43:29.958712 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:43:29.966735 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.unique_stg_crypto_id.a906923065"
+[0m19:43:29.968235 [debug] [Thread-1 (]: Began executing node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:43:29.969740 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.unique_stg_crypto_id.a906923065"
+[0m19:43:29.970246 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.unique_stg_crypto_id.a906923065"
+[0m19:43:29.970745 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_crypto_id.a906923065: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.unique_stg_crypto_id.a906923065"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "pulse"."public_public"."stg_crypto"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:29.970745 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.003183 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.032 seconds
+[0m19:43:30.004686 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_crypto_id.a906923065: ROLLBACK
+[0m19:43:30.005191 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_crypto_id.a906923065: Close
+[0m19:43:30.006191 [info ] [Thread-1 (]: 6 of 22 PASS unique_stg_crypto_id .............................................. [[32mPASS[0m in 0.05s]
+[0m19:43:30.006692 [debug] [Thread-1 (]: Finished running node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:43:30.006692 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:43:30.007192 [info ] [Thread-1 (]: 7 of 22 START test not_null_stg_sports_away_score .............................. [RUN]
+[0m19:43:30.007192 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.unique_stg_crypto_id.a906923065, now test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc)
+[0m19:43:30.007192 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:43:30.083457 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"
+[0m19:43:30.084963 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:43:30.086972 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"
+[0m19:43:30.088472 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"
+[0m19:43:30.088972 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select away_score
+from "pulse"."public_public"."stg_sports"
+where away_score is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.089472 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.123053 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m19:43:30.124553 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc: ROLLBACK
+[0m19:43:30.125052 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc: Close
+[0m19:43:30.125554 [info ] [Thread-1 (]: 7 of 22 PASS not_null_stg_sports_away_score .................................... [[32mPASS[0m in 0.12s]
+[0m19:43:30.126052 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:43:30.126052 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:43:30.126551 [info ] [Thread-1 (]: 8 of 22 START test not_null_stg_sports_away_team ............................... [RUN]
+[0m19:43:30.127052 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc, now test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4)
+[0m19:43:30.127052 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:43:30.132064 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"
+[0m19:43:30.133061 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:43:30.134574 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"
+[0m19:43:30.136072 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"
+[0m19:43:30.136072 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select away_team
+from "pulse"."public_public"."stg_sports"
+where away_team is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.136574 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.166620 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m19:43:30.168120 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4: ROLLBACK
+[0m19:43:30.168620 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4: Close
+[0m19:43:30.169121 [info ] [Thread-1 (]: 8 of 22 PASS not_null_stg_sports_away_team ..................................... [[32mPASS[0m in 0.04s]
+[0m19:43:30.170124 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:43:30.170630 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:43:30.171130 [info ] [Thread-1 (]: 9 of 22 START test not_null_stg_sports_game_date ............................... [RUN]
+[0m19:43:30.171130 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4, now test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4)
+[0m19:43:30.171631 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:43:30.177643 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"
+[0m19:43:30.178641 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:43:30.179142 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"
+[0m19:43:30.180653 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"
+[0m19:43:30.181153 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select game_date
+from "pulse"."public_public"."stg_sports"
+where game_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.181652 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.212702 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.031 seconds
+[0m19:43:30.214202 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4: ROLLBACK
+[0m19:43:30.215203 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4: Close
+[0m19:43:30.215703 [info ] [Thread-1 (]: 9 of 22 PASS not_null_stg_sports_game_date ..................................... [[32mPASS[0m in 0.04s]
+[0m19:43:30.216202 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:43:30.216702 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:43:30.217202 [info ] [Thread-1 (]: 10 of 22 START test not_null_stg_sports_home_score ............................. [RUN]
+[0m19:43:30.217702 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4, now test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9)
+[0m19:43:30.218203 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:43:30.223711 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"
+[0m19:43:30.225220 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:43:30.226220 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"
+[0m19:43:30.227720 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"
+[0m19:43:30.227720 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select home_score
+from "pulse"."public_public"."stg_sports"
+where home_score is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.228220 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.261266 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:43:30.263266 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9: ROLLBACK
+[0m19:43:30.263767 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9: Close
+[0m19:43:30.264772 [info ] [Thread-1 (]: 10 of 22 PASS not_null_stg_sports_home_score ................................... [[32mPASS[0m in 0.05s]
+[0m19:43:30.265277 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:43:30.265777 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:43:30.265777 [info ] [Thread-1 (]: 11 of 22 START test not_null_stg_sports_home_team .............................. [RUN]
+[0m19:43:30.266277 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9, now test.pulse_transform.not_null_stg_sports_home_team.9d8def7714)
+[0m19:43:30.266776 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:43:30.272287 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"
+[0m19:43:30.273286 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:43:30.275298 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"
+[0m19:43:30.276797 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"
+[0m19:43:30.276797 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_team.9d8def7714: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select home_team
+from "pulse"."public_public"."stg_sports"
+where home_team is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.277297 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.424333 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.147 seconds
+[0m19:43:30.425842 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_team.9d8def7714: ROLLBACK
+[0m19:43:30.426841 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_team.9d8def7714: Close
+[0m19:43:30.427342 [info ] [Thread-1 (]: 11 of 22 PASS not_null_stg_sports_home_team .................................... [[32mPASS[0m in 0.16s]
+[0m19:43:30.427841 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:43:30.428342 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:43:30.428342 [info ] [Thread-1 (]: 12 of 22 START test not_null_stg_sports_id ..................................... [RUN]
+[0m19:43:30.428842 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_home_team.9d8def7714, now test.pulse_transform.not_null_stg_sports_id.a70dda288b)
+[0m19:43:30.429343 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:43:30.434858 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_id.a70dda288b"
+[0m19:43:30.435863 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:43:30.437363 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_id.a70dda288b"
+[0m19:43:30.438364 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_id.a70dda288b"
+[0m19:43:30.438364 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_id.a70dda288b: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_id.a70dda288b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "pulse"."public_public"."stg_sports"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.438864 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.468909 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m19:43:30.470410 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_id.a70dda288b: ROLLBACK
+[0m19:43:30.470915 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_id.a70dda288b: Close
+[0m19:43:30.471417 [info ] [Thread-1 (]: 12 of 22 PASS not_null_stg_sports_id ........................................... [[32mPASS[0m in 0.04s]
+[0m19:43:30.471915 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:43:30.472383 [debug] [Thread-1 (]: Began running node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:43:30.472889 [info ] [Thread-1 (]: 13 of 22 START test accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown  [RUN]
+[0m19:43:30.473388 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_id.a70dda288b, now test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f)
+[0m19:43:30.473388 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:43:30.578621 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"
+[0m19:43:30.579118 [debug] [Thread-1 (]: Began executing node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:43:30.581632 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"
+[0m19:43:30.582497 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"
+[0m19:43:30.583002 [debug] [Thread-1 (]: On test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        condition as value_field,
+        count(*) as n_records
+
+    from "pulse"."public_public"."stg_weather"
+    group by condition
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'clear','mainly_clear','partly_cloudy','overcast','fog','depositing_rime_fog','drizzle_light','drizzle_moderate','drizzle_dense','freezing_drizzle_light','freezing_drizzle_dense','rain_slight','rain_moderate','rain_heavy','freezing_rain_light','freezing_rain_heavy','snow_fall_slight','snow_fall_moderate','snow_fall_heavy','snow_grains','rain_showers_slight','rain_showers_moderate','rain_showers_violent','snow_showers_slight','snow_showers_heavy','thunderstorm_slight_or_moderate','thunderstorm_hail_slight','thunderstorm_hail_heavy','unknown'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.583501 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.616046 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:43:30.617545 [debug] [Thread-1 (]: On test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f: ROLLBACK
+[0m19:43:30.618046 [debug] [Thread-1 (]: On test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f: Close
+[0m19:43:30.619045 [info ] [Thread-1 (]: 13 of 22 PASS accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown  [[32mPASS[0m in 0.15s]
+[0m19:43:30.619045 [debug] [Thread-1 (]: Finished running node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:43:30.620049 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:43:30.620049 [info ] [Thread-1 (]: 14 of 22 START test not_null_stg_weather_city .................................. [RUN]
+[0m19:43:30.620553 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f, now test.pulse_transform.not_null_stg_weather_city.c03e0c0127)
+[0m19:43:30.621053 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:43:30.626564 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"
+[0m19:43:30.627563 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:43:30.629065 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"
+[0m19:43:30.630106 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"
+[0m19:43:30.630612 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_city.c03e0c0127: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select city
+from "pulse"."public_public"."stg_weather"
+where city is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.631113 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.665173 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m19:43:30.666676 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_city.c03e0c0127: ROLLBACK
+[0m19:43:30.667174 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_city.c03e0c0127: Close
+[0m19:43:30.668174 [info ] [Thread-1 (]: 14 of 22 PASS not_null_stg_weather_city ........................................ [[32mPASS[0m in 0.05s]
+[0m19:43:30.668674 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:43:30.669174 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:43:30.669174 [info ] [Thread-1 (]: 15 of 22 START test not_null_stg_weather_condition ............................. [RUN]
+[0m19:43:30.670179 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_city.c03e0c0127, now test.pulse_transform.not_null_stg_weather_condition.0c9e947318)
+[0m19:43:30.670179 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:43:30.675684 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"
+[0m19:43:30.676684 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:43:30.677684 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"
+[0m19:43:30.678684 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"
+[0m19:43:30.679183 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_condition.0c9e947318: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select condition
+from "pulse"."public_public"."stg_weather"
+where condition is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.679183 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.712154 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:43:30.713241 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_condition.0c9e947318: ROLLBACK
+[0m19:43:30.714245 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_condition.0c9e947318: Close
+[0m19:43:30.714751 [info ] [Thread-1 (]: 15 of 22 PASS not_null_stg_weather_condition ................................... [[32mPASS[0m in 0.05s]
+[0m19:43:30.715250 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:43:30.715750 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:43:30.716251 [info ] [Thread-1 (]: 16 of 22 START test not_null_stg_weather_id .................................... [RUN]
+[0m19:43:30.716750 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_condition.0c9e947318, now test.pulse_transform.not_null_stg_weather_id.0e1828fa23)
+[0m19:43:30.716750 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:43:30.722759 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"
+[0m19:43:30.723759 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:43:30.725258 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"
+[0m19:43:30.726259 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"
+[0m19:43:30.726760 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_id.0e1828fa23: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "pulse"."public_public"."stg_weather"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.726760 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.757326 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m19:43:30.758826 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_id.0e1828fa23: ROLLBACK
+[0m19:43:30.759325 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_id.0e1828fa23: Close
+[0m19:43:30.759325 [info ] [Thread-1 (]: 16 of 22 PASS not_null_stg_weather_id .......................................... [[32mPASS[0m in 0.04s]
+[0m19:43:30.760329 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:43:30.760833 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:43:30.761333 [info ] [Thread-1 (]: 17 of 22 START test not_null_stg_weather_temperature ........................... [RUN]
+[0m19:43:30.761835 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_id.0e1828fa23, now test.pulse_transform.not_null_stg_weather_temperature.fe647a6746)
+[0m19:43:30.762333 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:43:30.768345 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"
+[0m19:43:30.768844 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:43:30.770347 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"
+[0m19:43:30.770851 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"
+[0m19:43:30.771353 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_temperature.fe647a6746: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select temperature
+from "pulse"."public_public"."stg_weather"
+where temperature is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.771852 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.804409 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:43:30.806417 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_temperature.fe647a6746: ROLLBACK
+[0m19:43:30.806916 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_temperature.fe647a6746: Close
+[0m19:43:30.807916 [info ] [Thread-1 (]: 17 of 22 PASS not_null_stg_weather_temperature ................................. [[32mPASS[0m in 0.05s]
+[0m19:43:30.808417 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:43:30.808915 [debug] [Thread-1 (]: Began running node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:43:30.809416 [info ] [Thread-1 (]: 18 of 22 START test unique_stg_weather_id ...................................... [RUN]
+[0m19:43:30.809416 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_temperature.fe647a6746, now test.pulse_transform.unique_stg_weather_id.c42c665fbe)
+[0m19:43:30.810423 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:43:30.816941 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.unique_stg_weather_id.c42c665fbe"
+[0m19:43:30.817441 [debug] [Thread-1 (]: Began executing node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:43:30.819441 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.unique_stg_weather_id.c42c665fbe"
+[0m19:43:30.820446 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.unique_stg_weather_id.c42c665fbe"
+[0m19:43:30.820446 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_weather_id.c42c665fbe: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.unique_stg_weather_id.c42c665fbe"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "pulse"."public_public"."stg_weather"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.820952 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.857027 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.036 seconds
+[0m19:43:30.858528 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_weather_id.c42c665fbe: ROLLBACK
+[0m19:43:30.859028 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_weather_id.c42c665fbe: Close
+[0m19:43:30.859028 [info ] [Thread-1 (]: 18 of 22 PASS unique_stg_weather_id ............................................ [[32mPASS[0m in 0.05s]
+[0m19:43:30.860032 [debug] [Thread-1 (]: Finished running node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:43:30.860537 [debug] [Thread-1 (]: Began running node model.pulse_transform.daily_summary
+[0m19:43:30.861038 [info ] [Thread-1 (]: 19 of 22 START sql table model public_public.daily_summary ..................... [RUN]
+[0m19:43:30.861537 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.unique_stg_weather_id.c42c665fbe, now model.pulse_transform.daily_summary)
+[0m19:43:30.862038 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.daily_summary
+[0m19:43:30.864542 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.daily_summary"
+[0m19:43:30.865548 [debug] [Thread-1 (]: Began executing node model.pulse_transform.daily_summary
+[0m19:43:30.868547 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.daily_summary"
+[0m19:43:30.869046 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:43:30.870050 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."daily_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with latest_weather as (
+    select
+        city,
+        temperature,
+        condition,
+        ingested_at
+    from "pulse"."public_public"."stg_weather"
+    order by ingested_at desc
+    limit 1
+),
+latest_sports as (
+    select
+        home_team,
+        away_team,
+        home_score,
+        away_score,
+        game_date,
+        ingested_at
+    from "pulse"."public_public"."stg_sports"
+    order by game_date desc
+    limit 10
+),
+top_crypto as (
+    select
+        coin,
+        price_usd,
+        ingested_at
+    from "pulse"."public_public"."stg_crypto"
+    order by price_usd desc
+    limit 5
+)
+
+select
+    w.city as weather_city,
+    w.temperature as weather_temperature,
+    w.condition as weather_condition,
+    w.ingested_at as weather_ingested_at,
+    s.home_team,
+    s.away_team,
+    s.home_score,
+    s.away_score,
+    s.game_date as sports_game_date,
+    s.ingested_at as sports_ingested_at,
+    c.coin as crypto_coin,
+    c.price_usd as crypto_price_usd,
+    c.ingested_at as crypto_ingested_at
+from latest_weather w
+cross join latest_sports s
+cross join top_crypto c
+  );
+  
+[0m19:43:30.870050 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.910562 [debug] [Thread-1 (]: SQL status: SELECT 10 in 0.040 seconds
+[0m19:43:30.913062 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:43:30.913562 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+alter table "pulse"."public_public"."daily_summary" rename to "daily_summary__dbt_backup"
+[0m19:43:30.914063 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:30.916062 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:43:30.916062 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+alter table "pulse"."public_public"."daily_summary__dbt_tmp" rename to "daily_summary"
+[0m19:43:30.917063 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:43:30.918563 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: COMMIT
+[0m19:43:30.918563 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:43:30.918563 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: COMMIT
+[0m19:43:30.920073 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:43:30.921575 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."daily_summary__dbt_backup"
+[0m19:43:30.922574 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:43:30.922574 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+drop table if exists "pulse"."public_public"."daily_summary__dbt_backup" cascade
+[0m19:43:30.926080 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m19:43:30.927582 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: Close
+[0m19:43:30.928082 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b049e82d-b5d3-4b16-a5b2-49e7683fa711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000249723AAF30>]}
+[0m19:43:30.928579 [info ] [Thread-1 (]: 19 of 22 OK created sql table model public_public.daily_summary ................ [[32mSELECT 10[0m in 0.07s]
+[0m19:43:30.929081 [debug] [Thread-1 (]: Finished running node model.pulse_transform.daily_summary
+[0m19:43:30.930084 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:43:30.930590 [info ] [Thread-1 (]: 20 of 22 START test not_null_daily_summary_crypto_coin ......................... [RUN]
+[0m19:43:30.931090 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.daily_summary, now test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7)
+[0m19:43:30.931589 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:43:30.938093 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"
+[0m19:43:30.939094 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:43:30.941605 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"
+[0m19:43:30.942609 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"
+[0m19:43:30.942609 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select crypto_coin
+from "pulse"."public_public"."daily_summary"
+where crypto_coin is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:30.943110 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:30.986231 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.043 seconds
+[0m19:43:30.988231 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7: ROLLBACK
+[0m19:43:30.988732 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7: Close
+[0m19:43:30.989232 [info ] [Thread-1 (]: 20 of 22 PASS not_null_daily_summary_crypto_coin ............................... [[32mPASS[0m in 0.06s]
+[0m19:43:30.990236 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:43:30.990236 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:43:30.990742 [info ] [Thread-1 (]: 21 of 22 START test not_null_daily_summary_sports_game_date .................... [RUN]
+[0m19:43:30.991242 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7, now test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3)
+[0m19:43:30.991744 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:43:30.997748 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"
+[0m19:43:30.999260 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:43:31.001272 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"
+[0m19:43:31.002775 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"
+[0m19:43:31.003275 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sports_game_date
+from "pulse"."public_public"."daily_summary"
+where sports_game_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:31.003275 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:31.140920 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.137 seconds
+[0m19:43:31.142429 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3: ROLLBACK
+[0m19:43:31.142928 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3: Close
+[0m19:43:31.143428 [info ] [Thread-1 (]: 21 of 22 PASS not_null_daily_summary_sports_game_date .......................... [[32mPASS[0m in 0.15s]
+[0m19:43:31.143927 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:43:31.144428 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:43:31.144428 [info ] [Thread-1 (]: 22 of 22 START test not_null_daily_summary_weather_city ........................ [RUN]
+[0m19:43:31.144927 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3, now test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc)
+[0m19:43:31.145429 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:43:31.150965 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"
+[0m19:43:31.151970 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:43:31.153476 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"
+[0m19:43:31.153976 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"
+[0m19:43:31.154980 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select weather_city
+from "pulse"."public_public"."daily_summary"
+where weather_city is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:43:31.155484 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:43:31.187035 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.032 seconds
+[0m19:43:31.189044 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc: ROLLBACK
+[0m19:43:31.189044 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc: Close
+[0m19:43:31.190048 [info ] [Thread-1 (]: 22 of 22 PASS not_null_daily_summary_weather_city .............................. [[32mPASS[0m in 0.05s]
+[0m19:43:31.190552 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:43:31.191553 [debug] [MainThread]: On master: COMMIT
+[0m19:43:31.192054 [debug] [MainThread]: Using postgres connection "master"
+[0m19:43:31.192054 [debug] [MainThread]: On master: COMMIT
+[0m19:43:31.192553 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:43:31.220599 [debug] [MainThread]: SQL status: COMMIT in 0.028 seconds
+[0m19:43:31.220599 [debug] [MainThread]: On master: Close
+[0m19:43:31.221100 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:43:31.221599 [debug] [MainThread]: Connection 'list_pulse' was properly closed.
+[0m19:43:31.222099 [debug] [MainThread]: Connection 'list_pulse_public_public' was properly closed.
+[0m19:43:31.222099 [debug] [MainThread]: Connection 'test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc' was properly closed.
+[0m19:43:31.222601 [info ] [MainThread]: 
+[0m19:43:31.223099 [info ] [MainThread]: Finished running 4 table models, 18 data tests in 0 hours 0 minutes and 5.23 seconds (5.23s).
+[0m19:43:31.225609 [debug] [MainThread]: Command end result
+[0m19:43:31.253672 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\manifest.json
+[0m19:43:31.256668 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\semantic_manifest.json
+[0m19:43:31.259168 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\osi_document.json
+[0m19:43:31.267188 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\run_results.json
+[0m19:43:31.267687 [info ] [MainThread]: 
+[0m19:43:31.267687 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:43:31.268189 [info ] [MainThread]: 
+[0m19:43:31.268688 [info ] [MainThread]: Done. PASS=22 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=22
+[0m19:43:31.269188 [debug] [MainThread]: Command `dbt build` succeeded at 19:43:31.269188 after 8.28 seconds
+[0m19:43:31.270190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000249723AB2F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002496CEA0E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002496FC53B90>]}
+[0m19:43:31.270190 [debug] [MainThread]: Flushing usage events
+[0m19:43:31.865496 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:45:25.548766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC199FA360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1C2A65A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1C7CA780>]}
+
+
+============================== 19:45:25.558287 | ee3840f5-e6c8-4acf-b7a6-ee7aed10b498 ==============================
+[0m19:45:25.558287 [info ] [MainThread]: Running with dbt=1.12.0
+[0m19:45:25.558787 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt build --profiles-dir C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform --project-dir C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform', 'log_path': 'C:\\Users\\Steve\\OneDrive\\Desktop\\code\\pulse\\transform\\logs'}
+[0m19:45:25.750365 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1E2D2540>]}
+[0m19:45:25.804444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1E661610>]}
+[0m19:45:25.806444 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:45:26.051198 [debug] [MainThread]: checksum: c88f2b38114df2604ccc177aea92f212ddffa831408be655762d132e6474640b, vars: {}, profile: pulse_transform_profile, target: dev, version: 1.12.0
+[0m19:45:26.187858 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:45:26.188358 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:45:26.188358 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:45:26.196362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1E774380>]}
+[0m19:45:26.300316 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\manifest.json
+[0m19:45:26.303823 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\semantic_manifest.json
+[0m19:45:26.329863 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\osi_document.json
+[0m19:45:26.363573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1ECCB620>]}
+[0m19:45:26.364076 [info ] [MainThread]: Found 4 models, 18 data tests, 3 sources, 477 macros
+[0m19:45:26.367081 [info ] [MainThread]: 
+[0m19:45:26.367580 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:45:26.367580 [info ] [MainThread]: 
+[0m19:45:26.368080 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:45:26.371581 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pulse'
+[0m19:45:26.453751 [debug] [ThreadPool]: Using postgres connection "list_pulse"
+[0m19:45:26.453751 [debug] [ThreadPool]: On list_pulse: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "connection_name": "list_pulse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:45:26.454253 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:45:26.497820 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.043 seconds
+[0m19:45:26.499322 [debug] [ThreadPool]: On list_pulse: Close
+[0m19:45:26.500821 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pulse_public_public'
+[0m19:45:26.505328 [debug] [ThreadPool]: Using postgres connection "list_pulse_public_public"
+[0m19:45:26.505828 [debug] [ThreadPool]: On list_pulse_public_public: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "connection_name": "list_pulse_public_public"} */
+select
+      'pulse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'pulse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'pulse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_public'
+    union all
+    select distinct
+     'pulse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_public'
+  
+[0m19:45:26.505828 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:45:26.556361 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.051 seconds
+[0m19:45:26.557364 [debug] [ThreadPool]: On list_pulse_public_public: ROLLBACK
+[0m19:45:26.557871 [debug] [ThreadPool]: On list_pulse_public_public: Close
+[0m19:45:26.561868 [debug] [MainThread]: Using postgres connection "master"
+[0m19:45:26.561868 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:45:26.562369 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:45:26.596820 [debug] [MainThread]: SQL status: SELECT 0 in 0.034 seconds
+[0m19:45:26.598321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1E469970>]}
+[0m19:45:26.598826 [debug] [MainThread]: On master: ROLLBACK
+[0m19:45:26.598826 [debug] [MainThread]: On master: COMMIT
+[0m19:45:26.599326 [debug] [MainThread]: Using postgres connection "master"
+[0m19:45:26.599326 [debug] [MainThread]: On master: COMMIT
+[0m19:45:26.599826 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:45:26.599826 [debug] [MainThread]: On master: Close
+[0m19:45:26.604334 [debug] [Thread-1 (]: Began running node model.pulse_transform.stg_crypto
+[0m19:45:26.604834 [info ] [Thread-1 (]: 1 of 22 START sql table model public_public.stg_crypto ......................... [RUN]
+[0m19:45:26.605333 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.pulse_transform.stg_crypto'
+[0m19:45:26.605834 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.stg_crypto
+[0m19:45:26.610835 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.stg_crypto"
+[0m19:45:26.611833 [debug] [Thread-1 (]: Began executing node model.pulse_transform.stg_crypto
+[0m19:45:26.643415 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.stg_crypto"
+[0m19:45:26.644920 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:45:26.644920 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_crypto__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        raw_json::jsonb as payload
+    from "pulse"."public"."raw_crypto"
+),
+flattened as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        key as coin,
+        nullif(value ->> 'usd', '') as price_usd
+    from source,
+    jsonb_each(payload)
+)
+select
+    row_number() over (order by id, coin) as id,
+    source,
+    coin,
+    cast(price_usd as float) as price_usd,
+    ingested_at,
+    raw_json
+from flattened
+  );
+  
+[0m19:45:26.645423 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:45:26.692558 [debug] [Thread-1 (]: SQL status: SELECT 33 in 0.047 seconds
+[0m19:45:26.701075 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:45:26.701574 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+alter table "pulse"."public_public"."stg_crypto" rename to "stg_crypto__dbt_backup"
+[0m19:45:26.702076 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:26.706089 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:45:26.706588 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+alter table "pulse"."public_public"."stg_crypto__dbt_tmp" rename to "stg_crypto"
+[0m19:45:26.707088 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:26.724124 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: COMMIT
+[0m19:45:26.724623 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:45:26.725123 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: COMMIT
+[0m19:45:26.726608 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:45:26.731618 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."stg_crypto__dbt_backup"
+[0m19:45:26.735661 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_crypto"
+[0m19:45:26.736664 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_crypto"} */
+drop table if exists "pulse"."public_public"."stg_crypto__dbt_backup" cascade
+[0m19:45:26.740169 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m19:45:26.742671 [debug] [Thread-1 (]: On model.pulse_transform.stg_crypto: Close
+[0m19:45:26.744669 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC19BE7680>]}
+[0m19:45:26.745487 [info ] [Thread-1 (]: 1 of 22 OK created sql table model public_public.stg_crypto .................... [[32mSELECT 33[0m in 0.14s]
+[0m19:45:26.745487 [debug] [Thread-1 (]: Finished running node model.pulse_transform.stg_crypto
+[0m19:45:26.746170 [debug] [Thread-1 (]: Began running node model.pulse_transform.stg_sports
+[0m19:45:26.746671 [info ] [Thread-1 (]: 2 of 22 START sql table model public_public.stg_sports ......................... [RUN]
+[0m19:45:26.746671 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.stg_crypto, now model.pulse_transform.stg_sports)
+[0m19:45:26.747675 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.stg_sports
+[0m19:45:26.749679 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.stg_sports"
+[0m19:45:26.750180 [debug] [Thread-1 (]: Began executing node model.pulse_transform.stg_sports
+[0m19:45:26.753185 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.stg_sports"
+[0m19:45:26.753691 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:45:26.754190 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_sports__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        raw_json::jsonb -> 'events' as events_json
+    from "pulse"."public"."raw_sports"
+),
+parsed as (
+    select
+        id,
+        source,
+        raw_json,
+        ingested_at,
+        events_json -> 0 ->> 'date' as game_date,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 0 -> 'team' ->> 'abbreviation' as home_team,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 0 ->> 'score' as home_score,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 1 -> 'team' ->> 'abbreviation' as away_team,
+        events_json -> 0 -> 'competitions' -> 0 -> 'competitors' -> 1 ->> 'score' as away_score
+    from source
+)
+select
+    id,
+    source,
+    trim(home_team) as home_team,
+    trim(away_team) as away_team,
+    cast(home_score as integer) as home_score,
+    cast(away_score as integer) as away_score,
+    game_date,
+    ingested_at,
+    raw_json
+from parsed
+  );
+  
+[0m19:45:26.754190 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:26.794765 [debug] [Thread-1 (]: SQL status: SELECT 3 in 0.041 seconds
+[0m19:45:26.797264 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:45:26.797764 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+alter table "pulse"."public_public"."stg_sports" rename to "stg_sports__dbt_backup"
+[0m19:45:26.798765 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:45:26.800762 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:45:26.800762 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+alter table "pulse"."public_public"."stg_sports__dbt_tmp" rename to "stg_sports"
+[0m19:45:26.801263 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:26.802264 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: COMMIT
+[0m19:45:26.803267 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:45:26.803267 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: COMMIT
+[0m19:45:26.804771 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:45:26.806276 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."stg_sports__dbt_backup"
+[0m19:45:26.806276 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_sports"
+[0m19:45:26.807281 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_sports"} */
+drop table if exists "pulse"."public_public"."stg_sports__dbt_backup" cascade
+[0m19:45:26.810787 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m19:45:26.811785 [debug] [Thread-1 (]: On model.pulse_transform.stg_sports: Close
+[0m19:45:26.812286 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1E9A16A0>]}
+[0m19:45:26.812286 [info ] [Thread-1 (]: 2 of 22 OK created sql table model public_public.stg_sports .................... [[32mSELECT 3[0m in 0.07s]
+[0m19:45:26.813289 [debug] [Thread-1 (]: Finished running node model.pulse_transform.stg_sports
+[0m19:45:26.813794 [debug] [Thread-1 (]: Began running node model.pulse_transform.stg_weather
+[0m19:45:26.814293 [info ] [Thread-1 (]: 3 of 22 START sql table model public_public.stg_weather ........................ [RUN]
+[0m19:45:26.814794 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.stg_sports, now model.pulse_transform.stg_weather)
+[0m19:45:26.814794 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.stg_weather
+[0m19:45:26.817803 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.stg_weather"
+[0m19:45:26.818302 [debug] [Thread-1 (]: Began executing node model.pulse_transform.stg_weather
+[0m19:45:26.821303 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.stg_weather"
+[0m19:45:26.822303 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:45:26.822303 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."stg_weather__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with source as (
+    select
+        id,
+        source,
+        raw_json::jsonb ->> 'requested_city' as city,
+        raw_json::jsonb -> 'current_weather' ->> 'temperature' as temperature,
+        raw_json::jsonb -> 'current_weather' ->> 'weathercode' as weather_code,
+        raw_json::jsonb ->> 'requested_latitude' as latitude,
+        raw_json::jsonb ->> 'requested_longitude' as longitude,
+        ingested_at,
+        raw_json
+    from "pulse"."public"."raw_weather"
+)
+
+select
+    id,
+    source,
+    city,
+    cast(temperature as float) as temperature,
+    case cast(weather_code as integer)
+        when 0 then 'clear'
+        when 1 then 'mainly_clear'
+        when 2 then 'partly_cloudy'
+        when 3 then 'overcast'
+        when 45 then 'fog'
+        when 48 then 'depositing_rime_fog'
+        when 51 then 'drizzle_light'
+        when 53 then 'drizzle_moderate'
+        when 55 then 'drizzle_dense'
+        when 56 then 'freezing_drizzle_light'
+        when 57 then 'freezing_drizzle_dense'
+        when 61 then 'rain_slight'
+        when 63 then 'rain_moderate'
+        when 65 then 'rain_heavy'
+        when 66 then 'freezing_rain_light'
+        when 67 then 'freezing_rain_heavy'
+        when 71 then 'snow_fall_slight'
+        when 73 then 'snow_fall_moderate'
+        when 75 then 'snow_fall_heavy'
+        when 77 then 'snow_grains'
+        when 80 then 'rain_showers_slight'
+        when 81 then 'rain_showers_moderate'
+        when 82 then 'rain_showers_violent'
+        when 85 then 'snow_showers_slight'
+        when 86 then 'snow_showers_heavy'
+        when 95 then 'thunderstorm_slight_or_moderate'
+        when 96 then 'thunderstorm_hail_slight'
+        when 99 then 'thunderstorm_hail_heavy'
+        else 'unknown'
+    end as condition,
+    ingested_at,
+    raw_json
+from source
+  );
+  
+[0m19:45:26.823307 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:26.861803 [debug] [Thread-1 (]: SQL status: SELECT 30 in 0.039 seconds
+[0m19:45:26.864812 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:45:26.865311 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+alter table "pulse"."public_public"."stg_weather" rename to "stg_weather__dbt_backup"
+[0m19:45:26.865810 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:26.867310 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:45:26.868314 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+alter table "pulse"."public_public"."stg_weather__dbt_tmp" rename to "stg_weather"
+[0m19:45:26.868819 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:26.870318 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: COMMIT
+[0m19:45:26.870818 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:45:26.871317 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: COMMIT
+[0m19:45:26.872319 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:45:26.873828 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."stg_weather__dbt_backup"
+[0m19:45:26.874828 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.stg_weather"
+[0m19:45:26.874828 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.stg_weather"} */
+drop table if exists "pulse"."public_public"."stg_weather__dbt_backup" cascade
+[0m19:45:26.878342 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m19:45:26.879843 [debug] [Thread-1 (]: On model.pulse_transform.stg_weather: Close
+[0m19:45:26.880341 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1ED7D4C0>]}
+[0m19:45:26.880842 [info ] [Thread-1 (]: 3 of 22 OK created sql table model public_public.stg_weather ................... [[32mSELECT 30[0m in 0.07s]
+[0m19:45:26.881342 [debug] [Thread-1 (]: Finished running node model.pulse_transform.stg_weather
+[0m19:45:26.881841 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:45:26.882342 [info ] [Thread-1 (]: 4 of 22 START test not_null_stg_crypto_coin .................................... [RUN]
+[0m19:45:26.882342 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.stg_weather, now test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe)
+[0m19:45:26.883345 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:45:26.895868 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"
+[0m19:45:26.896868 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:45:26.911381 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"
+[0m19:45:26.912382 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"
+[0m19:45:26.912382 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select coin
+from "pulse"."public_public"."stg_crypto"
+where coin is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:26.913385 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:26.945944 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.032 seconds
+[0m19:45:26.949444 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe: ROLLBACK
+[0m19:45:26.949944 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe: Close
+[0m19:45:26.950443 [info ] [Thread-1 (]: 4 of 22 PASS not_null_stg_crypto_coin .......................................... [[32mPASS[0m in 0.07s]
+[0m19:45:26.950944 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe
+[0m19:45:26.951444 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:45:26.951945 [info ] [Thread-1 (]: 5 of 22 START test not_null_stg_crypto_id ...................................... [RUN]
+[0m19:45:26.952444 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_crypto_coin.1a9a7af2fe, now test.pulse_transform.not_null_stg_crypto_id.6ded0cac78)
+[0m19:45:26.952444 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:45:26.958342 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"
+[0m19:45:26.959342 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:45:26.960843 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"
+[0m19:45:26.961843 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"
+[0m19:45:26.961843 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_id.6ded0cac78: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_crypto_id.6ded0cac78"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "pulse"."public_public"."stg_crypto"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:26.962342 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:26.994896 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.032 seconds
+[0m19:45:26.996898 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_id.6ded0cac78: ROLLBACK
+[0m19:45:26.997396 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_crypto_id.6ded0cac78: Close
+[0m19:45:26.997396 [info ] [Thread-1 (]: 5 of 22 PASS not_null_stg_crypto_id ............................................ [[32mPASS[0m in 0.05s]
+[0m19:45:26.998399 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_crypto_id.6ded0cac78
+[0m19:45:26.998904 [debug] [Thread-1 (]: Began running node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:45:26.999403 [info ] [Thread-1 (]: 6 of 22 START test unique_stg_crypto_id ........................................ [RUN]
+[0m19:45:26.999904 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_crypto_id.6ded0cac78, now test.pulse_transform.unique_stg_crypto_id.a906923065)
+[0m19:45:26.999904 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:45:27.008472 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.unique_stg_crypto_id.a906923065"
+[0m19:45:27.009473 [debug] [Thread-1 (]: Began executing node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:45:27.010972 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.unique_stg_crypto_id.a906923065"
+[0m19:45:27.011472 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.unique_stg_crypto_id.a906923065"
+[0m19:45:27.011973 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_crypto_id.a906923065: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.unique_stg_crypto_id.a906923065"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "pulse"."public_public"."stg_crypto"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.012473 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.042508 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m19:45:27.044016 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_crypto_id.a906923065: ROLLBACK
+[0m19:45:27.045016 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_crypto_id.a906923065: Close
+[0m19:45:27.046022 [info ] [Thread-1 (]: 6 of 22 PASS unique_stg_crypto_id .............................................. [[32mPASS[0m in 0.05s]
+[0m19:45:27.046521 [debug] [Thread-1 (]: Finished running node test.pulse_transform.unique_stg_crypto_id.a906923065
+[0m19:45:27.046521 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:45:27.047021 [info ] [Thread-1 (]: 7 of 22 START test not_null_stg_sports_away_score .............................. [RUN]
+[0m19:45:27.047520 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.unique_stg_crypto_id.a906923065, now test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc)
+[0m19:45:27.047520 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:45:27.128157 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"
+[0m19:45:27.129157 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:45:27.130158 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"
+[0m19:45:27.130659 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"
+[0m19:45:27.131156 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select away_score
+from "pulse"."public_public"."stg_sports"
+where away_score is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.131156 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.163721 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.032 seconds
+[0m19:45:27.165721 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc: ROLLBACK
+[0m19:45:27.166221 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc: Close
+[0m19:45:27.167222 [info ] [Thread-1 (]: 7 of 22 PASS not_null_stg_sports_away_score .................................... [[32mPASS[0m in 0.12s]
+[0m19:45:27.167720 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc
+[0m19:45:27.168221 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:45:27.168721 [info ] [Thread-1 (]: 8 of 22 START test not_null_stg_sports_away_team ............................... [RUN]
+[0m19:45:27.169223 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_away_score.8a079e60bc, now test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4)
+[0m19:45:27.169223 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:45:27.175728 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"
+[0m19:45:27.176227 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:45:27.178236 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"
+[0m19:45:27.178741 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"
+[0m19:45:27.179240 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select away_team
+from "pulse"."public_public"."stg_sports"
+where away_team is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.179741 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.318336 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.139 seconds
+[0m19:45:27.320338 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4: ROLLBACK
+[0m19:45:27.320838 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4: Close
+[0m19:45:27.321339 [info ] [Thread-1 (]: 8 of 22 PASS not_null_stg_sports_away_team ..................................... [[32mPASS[0m in 0.15s]
+[0m19:45:27.321837 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4
+[0m19:45:27.322337 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:45:27.322337 [info ] [Thread-1 (]: 9 of 22 START test not_null_stg_sports_game_date ............................... [RUN]
+[0m19:45:27.322337 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_away_team.cfb7ffdcd4, now test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4)
+[0m19:45:27.323343 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:45:27.328849 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"
+[0m19:45:27.329851 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:45:27.330850 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"
+[0m19:45:27.331349 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"
+[0m19:45:27.332353 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select game_date
+from "pulse"."public_public"."stg_sports"
+where game_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.332353 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.365835 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:45:27.366834 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4: ROLLBACK
+[0m19:45:27.366834 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4: Close
+[0m19:45:27.367838 [info ] [Thread-1 (]: 9 of 22 PASS not_null_stg_sports_game_date ..................................... [[32mPASS[0m in 0.05s]
+[0m19:45:27.368343 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4
+[0m19:45:27.368843 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:45:27.369343 [info ] [Thread-1 (]: 10 of 22 START test not_null_stg_sports_home_score ............................. [RUN]
+[0m19:45:27.369843 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_game_date.7a0e7af6c4, now test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9)
+[0m19:45:27.370343 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:45:27.375351 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"
+[0m19:45:27.376352 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:45:27.378351 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"
+[0m19:45:27.379351 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"
+[0m19:45:27.379351 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select home_score
+from "pulse"."public_public"."stg_sports"
+where home_score is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.379852 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.412389 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:45:27.413897 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9: ROLLBACK
+[0m19:45:27.414397 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9: Close
+[0m19:45:27.415398 [info ] [Thread-1 (]: 10 of 22 PASS not_null_stg_sports_home_score ................................... [[32mPASS[0m in 0.05s]
+[0m19:45:27.415903 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9
+[0m19:45:27.415903 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:45:27.416402 [info ] [Thread-1 (]: 11 of 22 START test not_null_stg_sports_home_team .............................. [RUN]
+[0m19:45:27.416902 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_home_score.e8726cdba9, now test.pulse_transform.not_null_stg_sports_home_team.9d8def7714)
+[0m19:45:27.417403 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:45:27.422408 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"
+[0m19:45:27.423411 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:45:27.424914 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"
+[0m19:45:27.425915 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"
+[0m19:45:27.426415 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_team.9d8def7714: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_home_team.9d8def7714"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select home_team
+from "pulse"."public_public"."stg_sports"
+where home_team is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.426415 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.460955 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m19:45:27.462454 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_team.9d8def7714: ROLLBACK
+[0m19:45:27.462454 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_home_team.9d8def7714: Close
+[0m19:45:27.463963 [info ] [Thread-1 (]: 11 of 22 PASS not_null_stg_sports_home_team .................................... [[32mPASS[0m in 0.05s]
+[0m19:45:27.464462 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_home_team.9d8def7714
+[0m19:45:27.464964 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:45:27.465471 [info ] [Thread-1 (]: 12 of 22 START test not_null_stg_sports_id ..................................... [RUN]
+[0m19:45:27.465970 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_home_team.9d8def7714, now test.pulse_transform.not_null_stg_sports_id.a70dda288b)
+[0m19:45:27.466470 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:45:27.473988 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_sports_id.a70dda288b"
+[0m19:45:27.474989 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:45:27.476492 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_sports_id.a70dda288b"
+[0m19:45:27.476992 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_sports_id.a70dda288b"
+[0m19:45:27.477493 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_id.a70dda288b: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_sports_id.a70dda288b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "pulse"."public_public"."stg_sports"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.477997 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.509036 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.031 seconds
+[0m19:45:27.510535 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_id.a70dda288b: ROLLBACK
+[0m19:45:27.510535 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_sports_id.a70dda288b: Close
+[0m19:45:27.511535 [info ] [Thread-1 (]: 12 of 22 PASS not_null_stg_sports_id ........................................... [[32mPASS[0m in 0.05s]
+[0m19:45:27.511535 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_sports_id.a70dda288b
+[0m19:45:27.512034 [debug] [Thread-1 (]: Began running node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:45:27.512535 [info ] [Thread-1 (]: 13 of 22 START test accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown  [RUN]
+[0m19:45:27.512535 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_sports_id.a70dda288b, now test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f)
+[0m19:45:27.512535 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:45:27.597206 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"
+[0m19:45:27.599219 [debug] [Thread-1 (]: Began executing node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:45:27.600716 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"
+[0m19:45:27.601718 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"
+[0m19:45:27.602218 [debug] [Thread-1 (]: On test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        condition as value_field,
+        count(*) as n_records
+
+    from "pulse"."public_public"."stg_weather"
+    group by condition
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'clear','mainly_clear','partly_cloudy','overcast','fog','depositing_rime_fog','drizzle_light','drizzle_moderate','drizzle_dense','freezing_drizzle_light','freezing_drizzle_dense','rain_slight','rain_moderate','rain_heavy','freezing_rain_light','freezing_rain_heavy','snow_fall_slight','snow_fall_moderate','snow_fall_heavy','snow_grains','rain_showers_slight','rain_showers_moderate','rain_showers_violent','snow_showers_slight','snow_showers_heavy','thunderstorm_slight_or_moderate','thunderstorm_hail_slight','thunderstorm_hail_heavy','unknown'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.602218 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.737895 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.135 seconds
+[0m19:45:27.738895 [debug] [Thread-1 (]: On test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f: ROLLBACK
+[0m19:45:27.739394 [debug] [Thread-1 (]: On test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f: Close
+[0m19:45:27.740395 [info ] [Thread-1 (]: 13 of 22 PASS accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown  [[32mPASS[0m in 0.23s]
+[0m19:45:27.740895 [debug] [Thread-1 (]: Finished running node test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f
+[0m19:45:27.741395 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:45:27.741395 [info ] [Thread-1 (]: 14 of 22 START test not_null_stg_weather_city .................................. [RUN]
+[0m19:45:27.741895 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.accepted_values_stg_weather_condition__clear__mainly_clear__partly_cloudy__overcast__fog__depositing_rime_fog__drizzle_light__drizzle_moderate__drizzle_dense__freezing_drizzle_light__freezing_drizzle_dense__rain_slight__rain_moderate__rain_heavy__freezing_rain_light__freezing_rain_heavy__snow_fall_slight__snow_fall_moderate__snow_fall_heavy__snow_grains__rain_showers_slight__rain_showers_moderate__rain_showers_violent__snow_showers_slight__snow_showers_heavy__thunderstorm_slight_or_moderate__thunderstorm_hail_slight__thunderstorm_hail_heavy__unknown.49df99636f, now test.pulse_transform.not_null_stg_weather_city.c03e0c0127)
+[0m19:45:27.742395 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:45:27.747908 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"
+[0m19:45:27.748413 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:45:27.749912 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"
+[0m19:45:27.750413 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"
+[0m19:45:27.750915 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_city.c03e0c0127: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_city.c03e0c0127"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select city
+from "pulse"."public_public"."stg_weather"
+where city is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.750915 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.778958 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.028 seconds
+[0m19:45:27.780456 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_city.c03e0c0127: ROLLBACK
+[0m19:45:27.780958 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_city.c03e0c0127: Close
+[0m19:45:27.781956 [info ] [Thread-1 (]: 14 of 22 PASS not_null_stg_weather_city ........................................ [[32mPASS[0m in 0.04s]
+[0m19:45:27.782455 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_city.c03e0c0127
+[0m19:45:27.782455 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:45:27.782455 [info ] [Thread-1 (]: 15 of 22 START test not_null_stg_weather_condition ............................. [RUN]
+[0m19:45:27.783458 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_city.c03e0c0127, now test.pulse_transform.not_null_stg_weather_condition.0c9e947318)
+[0m19:45:27.783963 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:45:27.790827 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"
+[0m19:45:27.791328 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:45:27.792329 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"
+[0m19:45:27.793837 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"
+[0m19:45:27.793837 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_condition.0c9e947318: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_condition.0c9e947318"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select condition
+from "pulse"."public_public"."stg_weather"
+where condition is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.794338 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.824781 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m19:45:27.827286 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_condition.0c9e947318: ROLLBACK
+[0m19:45:27.827786 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_condition.0c9e947318: Close
+[0m19:45:27.828785 [info ] [Thread-1 (]: 15 of 22 PASS not_null_stg_weather_condition ................................... [[32mPASS[0m in 0.04s]
+[0m19:45:27.829285 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_condition.0c9e947318
+[0m19:45:27.829785 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:45:27.830288 [info ] [Thread-1 (]: 16 of 22 START test not_null_stg_weather_id .................................... [RUN]
+[0m19:45:27.830288 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_condition.0c9e947318, now test.pulse_transform.not_null_stg_weather_id.0e1828fa23)
+[0m19:45:27.830785 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:45:27.836416 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"
+[0m19:45:27.837964 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:45:27.840468 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"
+[0m19:45:27.841473 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"
+[0m19:45:27.841975 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_id.0e1828fa23: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_id.0e1828fa23"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "pulse"."public_public"."stg_weather"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.841975 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.875464 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:45:27.876467 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_id.0e1828fa23: ROLLBACK
+[0m19:45:27.876467 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_id.0e1828fa23: Close
+[0m19:45:27.877978 [info ] [Thread-1 (]: 16 of 22 PASS not_null_stg_weather_id .......................................... [[32mPASS[0m in 0.05s]
+[0m19:45:27.878478 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_id.0e1828fa23
+[0m19:45:27.878977 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:45:27.879977 [info ] [Thread-1 (]: 17 of 22 START test not_null_stg_weather_temperature ........................... [RUN]
+[0m19:45:27.879977 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_id.0e1828fa23, now test.pulse_transform.not_null_stg_weather_temperature.fe647a6746)
+[0m19:45:27.880478 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:45:27.887486 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"
+[0m19:45:27.888486 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:45:27.889986 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"
+[0m19:45:27.890985 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"
+[0m19:45:27.890985 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_temperature.fe647a6746: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_stg_weather_temperature.fe647a6746"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select temperature
+from "pulse"."public_public"."stg_weather"
+where temperature is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.891486 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:27.933577 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.042 seconds
+[0m19:45:27.935586 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_temperature.fe647a6746: ROLLBACK
+[0m19:45:27.936409 [debug] [Thread-1 (]: On test.pulse_transform.not_null_stg_weather_temperature.fe647a6746: Close
+[0m19:45:27.936910 [info ] [Thread-1 (]: 17 of 22 PASS not_null_stg_weather_temperature ................................. [[32mPASS[0m in 0.06s]
+[0m19:45:27.937915 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_stg_weather_temperature.fe647a6746
+[0m19:45:27.938421 [debug] [Thread-1 (]: Began running node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:45:27.938920 [info ] [Thread-1 (]: 18 of 22 START test unique_stg_weather_id ...................................... [RUN]
+[0m19:45:27.939421 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_stg_weather_temperature.fe647a6746, now test.pulse_transform.unique_stg_weather_id.c42c665fbe)
+[0m19:45:27.939921 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:45:27.947435 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.unique_stg_weather_id.c42c665fbe"
+[0m19:45:27.948936 [debug] [Thread-1 (]: Began executing node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:45:27.951436 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.unique_stg_weather_id.c42c665fbe"
+[0m19:45:27.951935 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.unique_stg_weather_id.c42c665fbe"
+[0m19:45:27.952940 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_weather_id.c42c665fbe: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.unique_stg_weather_id.c42c665fbe"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "pulse"."public_public"."stg_weather"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:27.953445 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:28.012464 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.060 seconds
+[0m19:45:28.014823 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_weather_id.c42c665fbe: ROLLBACK
+[0m19:45:28.015828 [debug] [Thread-1 (]: On test.pulse_transform.unique_stg_weather_id.c42c665fbe: Close
+[0m19:45:28.016828 [info ] [Thread-1 (]: 18 of 22 PASS unique_stg_weather_id ............................................ [[32mPASS[0m in 0.08s]
+[0m19:45:28.017328 [debug] [Thread-1 (]: Finished running node test.pulse_transform.unique_stg_weather_id.c42c665fbe
+[0m19:45:28.017828 [debug] [Thread-1 (]: Began running node model.pulse_transform.daily_summary
+[0m19:45:28.018827 [info ] [Thread-1 (]: 19 of 22 START sql table model public_public.daily_summary ..................... [RUN]
+[0m19:45:28.019328 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.unique_stg_weather_id.c42c665fbe, now model.pulse_transform.daily_summary)
+[0m19:45:28.019830 [debug] [Thread-1 (]: Began compiling node model.pulse_transform.daily_summary
+[0m19:45:28.022327 [debug] [Thread-1 (]: Writing injected SQL for node "model.pulse_transform.daily_summary"
+[0m19:45:28.023838 [debug] [Thread-1 (]: Began executing node model.pulse_transform.daily_summary
+[0m19:45:28.027794 [debug] [Thread-1 (]: Writing runtime sql for node "model.pulse_transform.daily_summary"
+[0m19:45:28.029807 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:45:28.030307 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+
+  
+    
+
+  create  table "pulse"."public_public"."daily_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with latest_weather as (
+    select
+        city,
+        temperature,
+        condition,
+        ingested_at
+    from "pulse"."public_public"."stg_weather"
+    order by ingested_at desc
+    limit 1
+),
+latest_sports as (
+    select
+        home_team,
+        away_team,
+        home_score,
+        away_score,
+        game_date,
+        ingested_at
+    from "pulse"."public_public"."stg_sports"
+    order by game_date desc
+    limit 10
+),
+top_crypto as (
+    select
+        coin,
+        price_usd,
+        ingested_at
+    from "pulse"."public_public"."stg_crypto"
+    order by price_usd desc
+    limit 5
+)
+
+select
+    w.city as weather_city,
+    w.temperature as weather_temperature,
+    w.condition as weather_condition,
+    w.ingested_at as weather_ingested_at,
+    s.home_team,
+    s.away_team,
+    s.home_score,
+    s.away_score,
+    s.game_date as sports_game_date,
+    s.ingested_at as sports_ingested_at,
+    c.coin as crypto_coin,
+    c.price_usd as crypto_price_usd,
+    c.ingested_at as crypto_ingested_at
+from latest_weather w
+cross join latest_sports s
+cross join top_crypto c
+  );
+  
+[0m19:45:28.030307 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:28.080792 [debug] [Thread-1 (]: SQL status: SELECT 15 in 0.050 seconds
+[0m19:45:28.084300 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:45:28.084806 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+alter table "pulse"."public_public"."daily_summary" rename to "daily_summary__dbt_backup"
+[0m19:45:28.085312 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:28.087813 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:45:28.088318 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+alter table "pulse"."public_public"."daily_summary__dbt_tmp" rename to "daily_summary"
+[0m19:45:28.088820 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m19:45:28.090818 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: COMMIT
+[0m19:45:28.091318 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:45:28.091819 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: COMMIT
+[0m19:45:28.092319 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:45:28.094326 [debug] [Thread-1 (]: Applying DROP to: "pulse"."public_public"."daily_summary__dbt_backup"
+[0m19:45:28.094829 [debug] [Thread-1 (]: Using postgres connection "model.pulse_transform.daily_summary"
+[0m19:45:28.095327 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "model.pulse_transform.daily_summary"} */
+drop table if exists "pulse"."public_public"."daily_summary__dbt_backup" cascade
+[0m19:45:28.098827 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m19:45:28.099828 [debug] [Thread-1 (]: On model.pulse_transform.daily_summary: Close
+[0m19:45:28.100327 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ee3840f5-e6c8-4acf-b7a6-ee7aed10b498', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1F20CD70>]}
+[0m19:45:28.100827 [info ] [Thread-1 (]: 19 of 22 OK created sql table model public_public.daily_summary ................ [[32mSELECT 15[0m in 0.08s]
+[0m19:45:28.101828 [debug] [Thread-1 (]: Finished running node model.pulse_transform.daily_summary
+[0m19:45:28.102327 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:45:28.102327 [info ] [Thread-1 (]: 20 of 22 START test not_null_daily_summary_crypto_coin ......................... [RUN]
+[0m19:45:28.103330 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pulse_transform.daily_summary, now test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7)
+[0m19:45:28.103836 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:45:28.109845 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"
+[0m19:45:28.110847 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:45:28.112346 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"
+[0m19:45:28.113349 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"
+[0m19:45:28.113853 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select crypto_coin
+from "pulse"."public_public"."daily_summary"
+where crypto_coin is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:28.113853 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:28.146885 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m19:45:28.149885 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7: ROLLBACK
+[0m19:45:28.150385 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7: Close
+[0m19:45:28.151385 [info ] [Thread-1 (]: 20 of 22 PASS not_null_daily_summary_crypto_coin ............................... [[32mPASS[0m in 0.05s]
+[0m19:45:28.153330 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7
+[0m19:45:28.154336 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:45:28.154837 [info ] [Thread-1 (]: 21 of 22 START test not_null_daily_summary_sports_game_date .................... [RUN]
+[0m19:45:28.155341 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_daily_summary_crypto_coin.2b3c1f82f7, now test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3)
+[0m19:45:28.155693 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:45:28.162215 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"
+[0m19:45:28.163219 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:45:28.164723 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"
+[0m19:45:28.165724 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"
+[0m19:45:28.166224 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sports_game_date
+from "pulse"."public_public"."daily_summary"
+where sports_game_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:28.166724 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:28.204301 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.038 seconds
+[0m19:45:28.205803 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3: ROLLBACK
+[0m19:45:28.206304 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3: Close
+[0m19:45:28.206804 [info ] [Thread-1 (]: 21 of 22 PASS not_null_daily_summary_sports_game_date .......................... [[32mPASS[0m in 0.05s]
+[0m19:45:28.207304 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3
+[0m19:45:28.207804 [debug] [Thread-1 (]: Began running node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:45:28.208302 [info ] [Thread-1 (]: 22 of 22 START test not_null_daily_summary_weather_city ........................ [RUN]
+[0m19:45:28.208804 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pulse_transform.not_null_daily_summary_sports_game_date.d349270fc3, now test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc)
+[0m19:45:28.208804 [debug] [Thread-1 (]: Began compiling node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:45:28.215310 [debug] [Thread-1 (]: Writing injected SQL for node "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"
+[0m19:45:28.216310 [debug] [Thread-1 (]: Began executing node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:45:28.217813 [debug] [Thread-1 (]: Writing runtime sql for node "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"
+[0m19:45:28.219317 [debug] [Thread-1 (]: Using postgres connection "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"
+[0m19:45:28.219818 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "pulse_transform_profile", "target_name": "dev", "node_id": "test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select weather_city
+from "pulse"."public_public"."daily_summary"
+where weather_city is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:45:28.219818 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:45:28.249854 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m19:45:28.251355 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc: ROLLBACK
+[0m19:45:28.251355 [debug] [Thread-1 (]: On test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc: Close
+[0m19:45:28.252354 [info ] [Thread-1 (]: 22 of 22 PASS not_null_daily_summary_weather_city .............................. [[32mPASS[0m in 0.04s]
+[0m19:45:28.252354 [debug] [Thread-1 (]: Finished running node test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc
+[0m19:45:28.253863 [debug] [MainThread]: On master: COMMIT
+[0m19:45:28.254362 [debug] [MainThread]: Using postgres connection "master"
+[0m19:45:28.254362 [debug] [MainThread]: On master: COMMIT
+[0m19:45:28.254862 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:45:28.282414 [debug] [MainThread]: SQL status: COMMIT in 0.028 seconds
+[0m19:45:28.282414 [debug] [MainThread]: On master: Close
+[0m19:45:28.283418 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:45:28.283418 [debug] [MainThread]: Connection 'list_pulse' was properly closed.
+[0m19:45:28.283418 [debug] [MainThread]: Connection 'list_pulse_public_public' was properly closed.
+[0m19:45:28.284433 [debug] [MainThread]: Connection 'test.pulse_transform.not_null_daily_summary_weather_city.efc8b36fcc' was properly closed.
+[0m19:45:28.284433 [info ] [MainThread]: 
+[0m19:45:28.284937 [info ] [MainThread]: Finished running 4 table models, 18 data tests in 0 hours 0 minutes and 1.92 seconds (1.92s).
+[0m19:45:28.287437 [debug] [MainThread]: Command end result
+[0m19:45:28.316937 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\manifest.json
+[0m19:45:28.320437 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\semantic_manifest.json
+[0m19:45:28.322437 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\osi_document.json
+[0m19:45:28.329756 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Steve\OneDrive\Desktop\code\pulse\transform\target\run_results.json
+[0m19:45:28.330257 [info ] [MainThread]: 
+[0m19:45:28.330757 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:45:28.330757 [info ] [MainThread]: 
+[0m19:45:28.331757 [info ] [MainThread]: Done. PASS=22 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=22
+[0m19:45:28.332258 [debug] [MainThread]: Command `dbt build` succeeded at 19:45:28.332258 after 2.91 seconds
+[0m19:45:28.333261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1E44B4A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1C6E2420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC1CC359A0>]}
+[0m19:45:28.333765 [debug] [MainThread]: Flushing usage events
+[0m19:45:28.920461 [debug] [MainThread]: An error was encountered while trying to flush usage events

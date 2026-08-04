@@ -73,6 +73,20 @@ def ingest_crypto(context: AssetExecutionContext):
 
 
 @asset(deps=[ingest_weather, ingest_sports, ingest_crypto])
+def ingest_quality(context: AssetExecutionContext):
+    from ingestion.database import get_session
+    from ingestion.quality_checks import run_all_checks
+
+    session = get_session()
+    try:
+        results = run_all_checks(session)
+        context.add_output_metadata({"quality_checks": {k: len(v) for k, v in results.items()}})
+        return results
+    finally:
+        session.close()
+
+
+@asset(deps=[ingest_quality])
 def run_dbt_build(context: AssetExecutionContext):
     dbt_executable = _get_dbt_executable()
     env = os.environ.copy()
@@ -93,7 +107,7 @@ def run_dbt_build(context: AssetExecutionContext):
 
 pulse_pipeline = define_asset_job(
     name="pulse_pipeline",
-    selection=[ingest_weather, ingest_sports, ingest_crypto, run_dbt_build],
+    selection=[ingest_weather, ingest_sports, ingest_crypto, ingest_quality, run_dbt_build],
 )
 
 hourly_schedule = ScheduleDefinition(
@@ -104,7 +118,7 @@ hourly_schedule = ScheduleDefinition(
 
 
 defs = Definitions(
-    assets=[initialize_database, ingest_weather, ingest_sports, ingest_crypto, run_dbt_build],
+    assets=[initialize_database, ingest_weather, ingest_sports, ingest_crypto, ingest_quality, run_dbt_build],
     jobs=[pulse_pipeline],
     schedules=[hourly_schedule],
 )
