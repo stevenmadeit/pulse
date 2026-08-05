@@ -1,13 +1,12 @@
 import json
-from datetime import timedelta
-from sqlalchemy import select, func
+from sqlalchemy import select
 
+from ingestion.ai_investigator import generate_ai_summary
 from ingestion.database import (
     RawWeather,
     RawSports,
     RawCrypto,
     RawIngestRun,
-    record_ingest_run,
     create_incident,
 )
 
@@ -30,6 +29,12 @@ def _get_latest_raw_records(session, source, limit=10):
     return session.execute(stmt).scalars().all()
 
 
+def _build_ai_summary_text(ai_summary: dict | None) -> str | None:
+    if not ai_summary:
+        return None
+    return json.dumps(ai_summary, ensure_ascii=False)
+
+
 def run_checks_for_source(session, source: str):
     incidents = []
     # Row count drop check
@@ -40,7 +45,8 @@ def run_checks_for_source(session, source: str):
             drop_pct = 100.0 * (1 - (latest.record_count / prev.record_count))
             severity = "high" if drop_pct > 90 else "medium"
             desc = f"Row count dropped by {drop_pct:.1f}% (from {prev.record_count} to {latest.record_count})"
-            inc = create_incident(session, source, "row_count_drop", desc, severity)
+            ai_summary = generate_ai_summary("row_count_drop", source, desc, severity, {"previous_count": prev.record_count, "latest_count": latest.record_count})
+            inc = create_incident(session, source, "row_count_drop", desc, severity, _build_ai_summary_text(ai_summary))
             incidents.append(inc)
 
     # Unexpected nulls and schema changes & duplicates
@@ -64,7 +70,8 @@ def run_checks_for_source(session, source: str):
             removed = prev_keys - latest_keys
             if added or removed:
                 desc = f"Schema change detected. Added: {list(added)}, Removed: {list(removed)}"
-                inc = create_incident(session, source, "schema_change", desc, "medium")
+                ai_summary = generate_ai_summary("schema_change", source, desc, "medium", {"added_keys": list(added), "removed_keys": list(removed)})
+                inc = create_incident(session, source, "schema_change", desc, "medium", _build_ai_summary_text(ai_summary))
                 incidents.append(inc)
 
         # Null checks per source
@@ -74,7 +81,8 @@ def run_checks_for_source(session, source: str):
             temp = cw.get("temperature") if isinstance(cw, dict) else None
             if temp is None:
                 desc = "Missing temperature in latest weather payload"
-                inc = create_incident(session, source, "missing_temperature", desc, "high")
+                ai_summary = generate_ai_summary("missing_temperature", source, desc, "high", {"payload": payload})
+                inc = create_incident(session, source, "missing_temperature", desc, "high", _build_ai_summary_text(ai_summary))
                 incidents.append(inc)
 
         if source == "crypto":
@@ -85,7 +93,8 @@ def run_checks_for_source(session, source: str):
                     missing.append(coin)
             if missing:
                 desc = f"Missing price for coins: {missing} in latest crypto payload"
-                inc = create_incident(session, source, "missing_prices", desc, "high")
+                ai_summary = generate_ai_summary("missing_prices", source, desc, "high", {"payload": payload})
+                inc = create_incident(session, source, "missing_prices", desc, "high", _build_ai_summary_text(ai_summary))
                 incidents.append(inc)
 
         if source == "sports":
@@ -105,7 +114,8 @@ def run_checks_for_source(session, source: str):
                                 for c in comp.get("competitors"):
                                     if c.get("score") is None:
                                         desc = f"Missing score in event {ev.get('id')} competitor {c.get('id')}"
-                                        inc = create_incident(session, source, "missing_scores", desc, "medium")
+                                        ai_summary = generate_ai_summary("missing_scores", source, desc, "medium", {"payload": payload})
+                                        inc = create_incident(session, source, "missing_scores", desc, "medium", _build_ai_summary_text(ai_summary))
                                         incidents.append(inc)
 
         # Duplicate detection in recent records (exact raw_json match)
@@ -116,7 +126,8 @@ def run_checks_for_source(session, source: str):
         for rt, cnt in dupcounts.items():
             if cnt > 1:
                 desc = f"Found {cnt} duplicate raw records in recent ingestion for {source}"
-                inc = create_incident(session, source, "duplicates", desc, "low")
+                ai_summary = generate_ai_summary("duplicates", source, desc, "low", {"payload": payload})
+                inc = create_incident(session, source, "duplicates", desc, "low", _build_ai_summary_text(ai_summary))
                 incidents.append(inc)
 
     return incidents

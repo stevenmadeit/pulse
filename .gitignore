@@ -1,0 +1,12 @@
+.venv/
+dbt_venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+pulse.db
+*.sqlite
+.venv/
+.ipynb_checkpoints/
+.env
+.DS_Store

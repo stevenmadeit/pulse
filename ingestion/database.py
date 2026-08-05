@@ -81,7 +81,7 @@ def record_ingest_run(session, source: str, record_count: int):
     return run
 
 
-def create_incident(session, source: str, check_type: str, description: str, severity: str = "low"):
+def create_incident(session, source: str, check_type: str, description: str, severity: str = "low", ai_summary: str | None = None):
     incident = Incident(
         source=source,
         check_type=check_type,
@@ -89,6 +89,7 @@ def create_incident(session, source: str, check_type: str, description: str, sev
         severity=severity,
         status="open",
         created_at=datetime.utcnow(),
+        ai_summary=ai_summary,
     )
     session.add(incident)
     session.commit()

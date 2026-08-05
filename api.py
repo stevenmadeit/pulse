@@ -1,5 +1,5 @@
+import json
 from fastapi import FastAPI, HTTPException
-from typing import List
 
 from ingestion.database import get_session, Incident
 
@@ -37,6 +37,13 @@ def get_incident(incident_id: int):
         incident = session.query(Incident).filter(Incident.id == incident_id).one_or_none()
         if not incident:
             raise HTTPException(status_code=404, detail="Incident not found")
+        ai_summary = None
+        if incident.ai_summary:
+            try:
+                ai_summary = json.loads(incident.ai_summary)
+            except Exception:
+                ai_summary = {"raw": incident.ai_summary}
+
         return {
             "id": incident.id,
             "source": incident.source,
@@ -45,8 +52,23 @@ def get_incident(incident_id: int):
             "severity": incident.severity,
             "status": incident.status,
             "created_at": incident.created_at.isoformat(),
-            "ai_summary": incident.ai_summary,
+            "ai_summary": ai_summary,
             "resolved_at": incident.resolved_at.isoformat() if incident.resolved_at else None,
         }
+    finally:
+        session.close()
+
+
+@app.post("/incidents/{incident_id}/resolve")
+def resolve_incident(incident_id: int):
+    session = get_session()
+    try:
+        incident = session.query(Incident).filter(Incident.id == incident_id).one_or_none()
+        if not incident:
+            raise HTTPException(status_code=404, detail="Incident not found")
+        incident.status = "resolved"
+        incident.resolved_at = incident.resolved_at or __import__("datetime").datetime.utcnow()
+        session.commit()
+        return {"id": incident.id, "status": incident.status, "resolved_at": incident.resolved_at.isoformat()}
     finally:
         session.close()
