@@ -1,9 +1,71 @@
 import json
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import select, text
 
-from ingestion.database import get_session, Incident
+from ingestion.database import get_session, Incident, RawIngestRun
 
 app = FastAPI(title="Pulse Data Quality API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/ingest_runs")
+def list_ingest_runs(limit: int = 10):
+    session = get_session()
+    try:
+        runs = session.execute(
+            select(RawIngestRun).order_by(RawIngestRun.run_at.desc()).limit(limit)
+        ).scalars().all()
+        return [
+            {
+                "id": run.id,
+                "source": run.source,
+                "record_count": run.record_count,
+                "run_at": run.run_at.isoformat(),
+            }
+            for run in runs
+        ]
+    finally:
+        session.close()
+
+
+@app.get("/snapshot")
+def get_snapshot():
+    session = get_session()
+    try:
+        def one(query):
+            row = session.execute(text(query)).mappings().first()
+            return dict(row) if row else None
+
+        def many(query):
+            return [dict(row) for row in session.execute(text(query)).mappings().all()]
+
+        weather = one(
+            "SELECT city, temperature, condition, ingested_at FROM stg_weather ORDER BY ingested_at DESC LIMIT 1"
+        )
+        sports = one(
+            "SELECT home_team, away_team, home_score, away_score, game_date, ingested_at FROM stg_sports ORDER BY game_date DESC LIMIT 1"
+        )
+        crypto = many(
+            "SELECT coin, price_usd, ingested_at FROM stg_crypto ORDER BY ingested_at DESC LIMIT 5"
+        )
+        return {"weather": weather, "sports": sports, "crypto": crypto}
+    except Exception:
+        return {"weather": None, "sports": None, "crypto": []}
+    finally:
+        session.close()
 
 
 @app.get("/incidents")
