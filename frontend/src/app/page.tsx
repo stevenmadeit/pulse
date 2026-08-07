@@ -1,22 +1,5 @@
 import Link from "next/link";
-
-async function fetchIncidents() {
-  const res = await fetch("http://127.0.0.1:8000/incidents", { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load incidents");
-  return res.json();
-}
-
-async function fetchIngestRuns() {
-  const res = await fetch("http://127.0.0.1:8000/ingest_runs", { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load ingest runs");
-  return res.json();
-}
-
-async function fetchSnapshot() {
-  const res = await fetch("http://127.0.0.1:8000/snapshot", { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load snapshot");
-  return res.json();
-}
+import { fetchIncidents, fetchIngestRuns, fetchSnapshot } from "@/lib/api";
 
 const severityClasses: Record<string, string> = {
   high: "bg-rose-600 text-white",

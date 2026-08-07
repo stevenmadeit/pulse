@@ -1,33 +1,36 @@
-export const API_BASE = "http://127.0.0.1:8000";
+const DEFAULT_API_BASE = "http://127.0.0.1:8000";
+export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || DEFAULT_API_BASE;
+
+async function requestJson(path: string, init?: RequestInit) {
+  const res = await fetch(`${API_BASE}${path}`, {
+    cache: "no-store",
+    ...init,
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Request failed (${res.status}): ${text || res.statusText}`);
+  }
+
+  return res.json();
+}
 
 export async function fetchIncidents() {
-  const res = await fetch(`${API_BASE}/incidents`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load incidents");
-  return res.json();
+  return requestJson("/incidents");
 }
 
 export async function fetchIncident(id: string) {
-  const res = await fetch(`${API_BASE}/incidents/${id}`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load incident");
-  return res.json();
+  return requestJson(`/incidents/${id}`);
 }
 
 export async function fetchIngestRuns() {
-  const res = await fetch(`${API_BASE}/ingest_runs`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load ingest runs");
-  return res.json();
+  return requestJson("/ingest_runs");
 }
 
 export async function fetchSnapshot() {
-  const res = await fetch(`${API_BASE}/snapshot`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load snapshot");
-  return res.json();
+  return requestJson("/snapshot");
 }
 
 export async function resolveIncident(id: string) {
-  const res = await fetch(`${API_BASE}/incidents/${id}/resolve`, {
-    method: "POST",
-  });
-  if (!res.ok) throw new Error("Failed to resolve incident");
-  return res.json();
+  return requestJson(`/incidents/${id}/resolve`, { method: "POST" });
 }
