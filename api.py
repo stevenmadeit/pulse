@@ -53,13 +53,13 @@ def get_snapshot():
             return [dict(row) for row in session.execute(text(query)).mappings().all()]
 
         weather = one(
-            "SELECT city, temperature, condition, ingested_at FROM stg_weather ORDER BY ingested_at DESC LIMIT 1"
+            "SELECT city, temperature, condition, ingested_at FROM public_public.stg_weather ORDER BY ingested_at DESC LIMIT 1"
         )
         sports = one(
-            "SELECT home_team, away_team, home_score, away_score, game_date, ingested_at FROM stg_sports ORDER BY game_date DESC LIMIT 1"
+            "SELECT home_team, away_team, home_score, away_score, game_date, ingested_at FROM public_public.stg_sports ORDER BY game_date DESC LIMIT 1"
         )
         crypto = many(
-            "SELECT coin, price_usd, ingested_at FROM stg_crypto ORDER BY ingested_at DESC LIMIT 5"
+            "SELECT coin, price_usd, ingested_at FROM public_public.stg_crypto ORDER BY ingested_at DESC LIMIT 5"
         )
         return {"weather": weather, "sports": sports, "crypto": crypto}
     except Exception:
